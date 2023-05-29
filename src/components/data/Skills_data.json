@@ -1,0 +1,78 @@
+
+
+{
+
+"skills": {
+    "full-stack": 
+    [
+    {
+      "name": "Java",
+      "logo": ""
+    },
+        {
+      "name": "Python",
+      "logo": ""
+    },
+            {
+      "name": "Express",
+      "logo": ""
+    },
+            {
+      "name": "NodeJs",
+      "logo": ""
+    },
+            {
+      "name": "Postgres",
+      "logo": ""
+    }
+  ],
+
+  "dev-ops": 
+    [
+    {
+      "name": "Linux",
+      "logo": ""
+    },
+        {
+      "name": "Github",
+      "logo": ""
+    },
+            {
+      "name": "AWS",
+      "logo": ""
+    },
+            {
+      "name": "Jenkins",
+      "logo": ""
+    },
+            {
+      "name": "Docker",
+      "logo": ""
+    },
+                {
+      "name": "Selenium",
+      "logo": ""
+    },
+                {
+      "name": "JUnit",
+      "logo": ""
+    },
+        {
+      "name": "TestNG",
+      "logo": ""
+    }
+  ],
+  "other": 
+    [
+    {
+      "name": "Java",
+      "logo": ""
+    }
+  ]
+}
+
+
+
+
+  
+}

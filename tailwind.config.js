@@ -22,10 +22,13 @@ module.exports = {
       // },
       colors: {
         darkSecondary: "#1b1b1b",
-        dark:"#31465c",
-        light: "#f5f5f5",
+        dark: "#31465c",
+        light: "#ede7e2",
         primary: "#B63E96",
+        lightOrange: "#f06040",
         primaryDark: "#58E6D9",
+        secondaryGreen: "#004753",
+        lightGreen:"#dde8e5",
       },
     },
     screens: {

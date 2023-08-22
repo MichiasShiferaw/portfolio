@@ -31,7 +31,7 @@ const Education = () => {
     offset: ["start end", "center start"],
   });
   return (
-    <div className="my-64">
+    <div className="my-64 text-dark dark:text-light">
       <h2 className="font-bold text-8xl w-full text-center md:text-6xl xs:text-4xl md:mb-16">
         Education
       </h2>

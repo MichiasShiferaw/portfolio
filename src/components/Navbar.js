@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { AiFillGithub, AiFillLinkedin, AiFillTwitterCircle, AiFillYoutube } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 import useThemeSwitcher from './hooks/useThemeSwitcher';
-import { GithubIcon, TwitterIcon, LinkedInIcon, SunIcon, MoonIcon, YoutubeIcon } from './Icons';
+import { GithubIcon, LinkedInIcon, SunIcon, MoonIcon, YoutubeIcon } from './Icons';
 
 
 const CustomLink =({href,title, className=""})=>{
@@ -90,50 +90,41 @@ const Navbar = () => {
           <CustomLink
             href="/"
             title="Home"
-            className="mr-5 rounded relative group lg:text-light lg:dark:text-dark"
+            className="mr-5 rounded relative group lg:text-light  text-secondaryGreen dark:text-light"
           />
           <CustomLink
             href="/about"
             title="About"
-            className="mx-5 rounded relative group lg:text-light lg:dark:text-dark"
+            className="mx-5 rounded relative group lg:text-light text-secondaryGreen dark:text-light"
           />
           <CustomLink
             href="/projects"
             title="Projects"
-            className="ml-5 rounded relative group lg:text-light lg:dark:text-dark"
+            className="ml-5 rounded relative group lg:text-light  text-secondaryGreen dark:text-light"
           />
         </nav>
 
         <nav className="flex items-center justify-center flex-wrap lg:mt-2 ">
           <motion.a
-            href="https://twitter.com"
+            href="https://www.linkedin.com/in/michiasshiferaw/"
             target={"_blank"}
             className="w-6 mr-3"
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <TwitterIcon className="w-full h-auto" />
-          </motion.a>
-          <motion.a
-            href="/"
-            target={"_blank"}
-            className="w-6 mx-3"
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <GithubIcon className="w-full h-auto" />
-          </motion.a>
-          <motion.a
-            href="/"
-            target={"_blank"}
-            className="w-6 mx-3"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
           >
             <LinkedInIcon className="w-full h-auto" />
           </motion.a>
           <motion.a
-            href="/"
+            href="https://github.com/MichiasShiferaw"
+            target={"_blank"}
+            className="w-6 mx-3"
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <GithubIcon className="w-full h-auto text-orange-500 dark:text-light" />
+          </motion.a>
+          <motion.a
+            href="https://www.youtube.com/@kuubamusic"
             target={"_blank"}
             className="w-6 ml-3"
             whileHover={{ y: -2 }}

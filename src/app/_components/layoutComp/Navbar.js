@@ -39,7 +39,8 @@ const NavLink = ({ text, selected, setSelected, tag, handleTagChange }) => {
   );
 };
 
-const tabs = ["Home", "About", "Projects", "Media", "Contact"];
+// const tabs = ["Home", "About", "Projects", "Media", "Contact"];
+const tabs = ["Home", "About", "Media", "Contact"];
 const Navbar = () => {
   const [selected, setSelected] = useState(tabs[0]);
   const { tag, handleTagChange } = useFilter();

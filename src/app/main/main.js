@@ -188,48 +188,36 @@ const Main = () => {
          " GridBasis pushin texture row-span-1 col-span-2 mdd:col-span-2 mdd:row-span-2 smm:col-span-3 xs:col-span-3 rounded-xl border-4 border-slate-400/10 bg-lightNaples dark:bg-transparent dark:border-darkVanilla p-1 transition-transform duration-300 transform hover:scale-95 text-black dark:text-lightSnow text-3xl smm:order-5 mdd:order-9 xl:text-center",
        content: <Contact />,
      },
-     {
-       gridName: "Care Sync",
-       tags: ["Home", "Projects"],
-       className:
-         " bg-lightVertigress projector GridBasis mdd:flex mdd:justify-center text-start !block pushin texture row-span-1 col-span-1 mdd:col-span-1 smm:col-span-3 rounded-xl border-4 border-slate-400/10  p-4 transition-transform duration-300 transform hover:scale-95 text-black group smm:order-last mdd:order-last dark:bg-transparent dark:border-darkicebBlue",
-       content: (
-         <ProjectCard
-           title={"Care Sync"}
-           description={" Hospital Management"}
-           previewUrl={"https://www.youtube.com"}
-           backgroundColor1={"#489f9C"}
-         />
-       ),
-     },
-
-     {
-       gridName: "Scrabble Template",
-       tags: ["Home", "Projects"],
-       className:
-         " dark:border-darkVista GridBasis h-48 mdd:h-24 pushin texture row-span-2 col-span-2 mdd:col-span-3  rounded-xl border-4 dark:bg-transparent border-slate-400/10  p-4 transition-transform duration-300 transform hover:scale-95 text-black group smm:order-last mdd:order-last",
-       content: (
-         <ProjectCard2
-           title={"Scrabble Portfolio Template"}
-           description={"Template"}
-           previewUrl={"https://www.youtube.com"}
-           backgroundColor1="#464D77"
-         />
-       ),
-     },
     //  {
-    //    gridName: "Contact",
-    //    tags: ["Home", "About"],
+    //    gridName: "Care Sync",
+    //    tags: ["Home", "Projects"],
     //    className:
-    //      " GridBasis pushin texture row-span-1 col-span-2 mdd:col-span-2 mdd:row-span-2 smm:col-span-3 xs:col-span-3 rounded-xl border-4 border-slate-400/10 bg-lightNaples dark:bg-transparent dark:border-darkVanilla p-1 transition-transform duration-300 transform hover:scale-95 text-black dark:text-lightSnow text-3xl smm:order-5 mdd:order-9 xl:text-center",
-    //    content: <Contact />,
+    //      " bg-lightVertigress projector GridBasis mdd:flex mdd:justify-center text-start !block pushin texture row-span-1 col-span-1 mdd:col-span-1 smm:col-span-3 rounded-xl border-4 border-slate-400/10  p-4 transition-transform duration-300 transform hover:scale-95 text-black group smm:order-last mdd:order-last dark:bg-transparent dark:border-darkicebBlue",
+    //    content: (
+    //      <ProjectCard
+    //        title={"Care Sync"}
+    //        description={" Hospital Management"}
+    //        previewUrl={"https://www.youtube.com"}
+    //        backgroundColor1={"#489f9C"}
+    //      />
+    //    ),
     //  },
-     //  {
-     //    gridName: "Projects",
-     //    tags: ["Home", "Projects"],
-     //    className: "",
 
-     //  },
+    //  {
+    //    gridName: "Scrabble Template",
+    //    tags: ["Home", "Projects"],
+    //    className:
+    //      " dark:border-darkVista GridBasis h-48 mdd:h-24 pushin texture row-span-2 col-span-2 mdd:col-span-3  rounded-xl border-4 dark:bg-transparent border-slate-400/10  p-4 transition-transform duration-300 transform hover:scale-95 text-black group smm:order-last mdd:order-last",
+    //    content: (
+    //      <ProjectCard2
+    //        title={"Scrabble Portfolio Template"}
+    //        description={"Template"}
+    //        previewUrl={"https://www.youtube.com"}
+    //        backgroundColor1="#464D77"
+    //      />
+    //    ),
+    //  },
+   
      // Add more grid entries as needed
    ];
 

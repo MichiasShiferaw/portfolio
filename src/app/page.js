@@ -1,17 +1,24 @@
-"use client"
-import React, { useEffect,useState } from "react";
+
+
+import React from "react";
 import Image from 'next/image'
 import Main from './main/main';
 import TransitionEffect from './_components/TransitionEffect';
 import Head from "next/head";
+import { Metadata } from "next";
+
+
+export const metadata = {
+  title: "Michias Shiferaw | Portfolio",
+  description: "Michias'compilation of academic, and work experience",
+};
+
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(false);
 
-  console.log(darkMode)
+
   return (
-    // <main className="flex min-h-screen flex-col items-center justify-between p-24">
-    <div className={darkMode ? "darkie" : ""}>
+    <>
       <Head>
         <title>Michias Shiferaw</title>
         <meta
@@ -19,8 +26,9 @@ export default function Home() {
           content="A brief description of the page content."
         />
       </Head>
+      
       {/* <TransitionEffect /> */}
       <Main />
-    </div>
+    </>
   );
 }

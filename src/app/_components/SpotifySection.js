@@ -28,7 +28,7 @@ const SpotifySection = () => {
             <div className="music-moving bg-lightSnow dark:bg-darkicebBlue"></div>
           </div>
           {/* Third Column (Bottom) */}
-          <div className="mt-6 pt-2 col-span-2 dark:text-lightSnow">
+          <div className="mt-3 mb-2 mdd:mb-0 pt-2 col-span-2 dark:text-lightSnow">
             <Marquee className="text-xl" speed={15}>
               Recently Played:&nbsp;Song,&nbsp;Artist&nbsp;
             </Marquee>

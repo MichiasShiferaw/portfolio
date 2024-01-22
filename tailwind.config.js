@@ -5,6 +5,7 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  safelist: ["bg-backgroundColor1"],
   darkMode: "class",
   theme: {
     extend: {
@@ -31,6 +32,38 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        darkSecondary: "#1b1b1b",
+        dark: "#31465c",
+        dark2: "#67568c",
+        light: "#ede7e2",
+        light2: "#e7c5b4",
+
+        lightyinBlue: "#464D77",
+        lightTeal: "#36827F",
+        lightNaples: "#F9DB6D",
+        lightSnow: "#F4EDED",
+        lightPeriwinkle: "#BEB8EB",
+        lightFrenchGrey: "#C8BFC7",
+        lightVertigress: "#489f9C",
+
+        darkVanilla: "#FFEDAC",
+        darkRaisin: "#1C2128",
+        darkVista: "#8F9EF5",
+        darkicebBlue: "#9FF5F2",
+
+        dumby2: "#d9a7c7",
+        dumby3: "#71b6e8",
+      },
+
+      backgroundImage: (theme) => ({
+        "gradient-light": `linear-gradient(to right, #fffcdc, ${theme(
+          "colors.dumby2"
+        )})`,
+        "gradient-dark": `linear-gradient(to right, #2f70bc, ${theme(
+          "colors.dumby3"
+        )})`,
+      }),
     },
   },
   plugins: [],

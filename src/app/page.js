@@ -1,19 +1,17 @@
 "use client"
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import Image from 'next/image'
 import Main from './main/main';
 import TransitionEffect from './_components/TransitionEffect';
 import Head from "next/head";
 
 export default function Home() {
-  // useEffect(() => {
-  //   // Scroll to the top when the component mounts
-  //   window.scrollTo(0, 0);
-  // }, []);
+  const [darkMode, setDarkMode] = useState(false);
+
+  console.log(darkMode)
   return (
     // <main className="flex min-h-screen flex-col items-center justify-between p-24">
-    <>
-      {/* <TransitionEffect/> */}
+    <div className={darkMode ? "darkie" : ""}>
       <Head>
         <title>Michias Shiferaw</title>
         <meta
@@ -21,7 +19,8 @@ export default function Home() {
           content="A brief description of the page content."
         />
       </Head>
+      {/* <TransitionEffect /> */}
       <Main />
-    </>
+    </div>
   );
 }

@@ -11,7 +11,7 @@ const Avatar = () => {
   return (
     <div style={{ height: "auto" }}>
       <Image
-        src={"/HeroLight.png"}
+        src={"/fillRule.png"}
         className="block dark:hidden"
         alt="Hero"
         // layout="responsive"

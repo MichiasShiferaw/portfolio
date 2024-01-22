@@ -1,7 +1,7 @@
 "use client";
 import React, {Suspense, useRef, useState} from "react";
 import Container from "../_components/Container";
-import { GithubIcon, LinkedInIcon, YoutubeIcon } from "../_components/Icons1";
+import { GithubIcon, LinkedInIcon, SpotifyIcon, YoutubeIcon } from "../_components/Icons1";
 import { motion, useInView, useMotionValue, useSpring, useTransform } from "framer-motion";
 import Hand from "../_components/mainPage/Hand";
 import AnimatedText from "../_components/AnimatedNumber";
@@ -17,6 +17,15 @@ import Details from "../_components/Details";
 import Project from "../_components/Project";
 import imgUrl from "../../../public/CareSync.jpg"
 import {ProjectCard,ProjectCard2} from "../_components/Project";
+import { LinkArrow } from "../_components/Miscell/LinkArrow";
+import Marquee from "react-fast-marquee";
+import { useFilter } from "../_components/FilterContext";
+import Contact from "../_components/Contact";
+import GithubSection from "../_components/GithubSection";
+import LinkedinSection from "../_components/LinkedinSection";
+import YoutubeSection from "../_components/YoutubeSection";
+import SpotifySection from "../_components/SpotifySection";
+
 
 
 
@@ -84,208 +93,226 @@ const Main = () => {
 
 
     // filter
-    const [tag,setTag] = useState("All");
+    // const [tag,setTag] = useState("All");
     const ref = useRef(null);
     
     const isInView = useInView(ref, { once: true });
 
-    const handleTagChange = (newTag) => {
-      setTag(newTag);
-    };
+    // const handleTagChange = (newTag) => {
+    //   setTag(newTag);
+    // };
 
-    //  const filteredProjects = projectsData.filter((project) =>
-    //    project.tag.includes(tag)
-    //  );
+
 
     //  const cardVariants = {
     //    initial: { y: 50, opacity: 0 },
     //    animate: { y: 0, opacity: 1 },
     //  };
 
+    const { tag, handleTagChange } = useFilter();
+
+
+    console.log("Hi"+tag)
+   const gridData = [
+     {
+       gridName: "Spotify",
+       tags: ["Home", "About", "Media"],
+       className:
+         "GridBasis spotify mdd:flex mdd:justify-center text-start !block pushin row-span-1 mdd:col-span-2 mdd:row-span-2 smm:col-span-1 smm:row-span-3 xs:col-span-3 rounded-xl border-4 bg-lightVertigress dark:bg-transparent dark:border-darkicebBlue hover:shadow-2xl border-slate-400/10 smm:p-4  transition-transform duration-300 transform hover:scale-95 text-black smm:order-last mdd:order-2",
+       content: <SpotifySection />,
+     },
+     {
+       gridName: "Youtube",
+       tags: ["Home", "About", "Media"],
+       className:
+         " GridBasis youtube mdd:flex mdd:justify-center text-start !block pushin texture row-span-1 col-span-1 mdd:col-span-1  smm:col-span-2 smm:row-span-4 xs:col-span-3 rounded-xl border-4 border-slate-400/10 bg-lightNaples dark:bg-transparent dark:border-darkVanilla  p-2 smm:p-4  transition-transform duration-300 transform hover:scale-95 text-black smm:order-last mdd:order-4",
+       content: <YoutubeSection />,
+     },
+
+     {
+       gridName: "LinkedInIcon",
+       tags: ["Home", "About", "Media"],
+       content: <LinkedinSection />,
+       className:
+         "GridBasis mdd:flex mdd:justify-center text-start !block pushin texture row-span-1 col-span-1 mdd:col-span-1 smm:col-span-2 smm:row-span-2 xs:col-span-3 rounded-xl border-4  border-slate-400/10 bg-lightyinBlue dark:bg-transparent dark:border-darkVista p-2 smm:p-4 transition-transform duration-300 transform hover:scale-95 text-black smm:order-3 sm:order-3 mdd:order-8 ",
+     },
+     {
+       gridName: "Github",
+       tags: ["Home", "About", "Media"],
+       className:
+         " GridBasis mdd:flex mdd:justify-center text-start !block pushin texture row-span-1 col-span-1 mdd:col-span-1 mdd:row-span-1 smm:col-span-1 smm:row-span-1 xs:col-span-3 rounded-xl border-4 border-slate-400/10 bg-lightVertigress dark:border-darkicebBlue dark:bg-transparent py-4 mdd:p-4 transition-transform duration-300 transform hover:scale-95 text-black  smm:order-4 mdd:order-6 ",
+       content: <GithubSection />,
+     },
+
+     {
+       gridName: "Blog",
+       tags: ["Home",],
+       className:
+         " GridBasis text-start !block pushin row-span-1 col-span-2 mdd:col-span-1 mdd:row-span-2 smm:col-span-3 smm:row-span-2 xs:col-span-3 rounded-xl border-4 bg-transparent dark:bg-lightPeriwinkle dark:border-transparent border-lightPeriwinkle transition-transform duration-300 transform hover:scale-95 text-black smm:order-6 mdd:order-10 ",
+       content: <Blog />,
+     },
+     {
+       gridName: "Toggle",
+       tags: ["Home", "About", "Projects", "Media"],
+       className:
+         " groupG1 GridBasis pushin texture row-span-1 col-span-1 mdd:col-span-1 smm:col-span-1 smm:row-span-1 xs:col-span-3 rounded-xl border-2 border-slate-400/10 bg-gray-300 dark:border-gray-300 dark:bg-transparent p-4 transition-transform duration-300 transform hover:scale-95 text-black smm:order-2 mdd:order-3 ",
+       content: <Toggle />,
+     },
+
+     {
+       gridName: "Hero",
+       tags: ["Home", "About","Projects","Media","Contact"],
+       className:
+         " GridBasis pushin row-span-3 col-span-4 mdd:col-span-3 mdd:row-span-3 smm:col-span-3 xs:col-span-3 rounded-xl border-8 dark:border-0 border-slate-600/10 dark:border-transparent dark:bg-gradient-to-r from-darkVista to-[#D3DDFB] p-2 transition-transform duration-300 transform hover:scale-95 text-black mdd:order-1",
+       content: <Hero />,
+     },
+     {
+       gridName: "Stack",
+       tags: ["Home"],
+       className:
+         "GridBasis pushin texture row-span-3 col-span-1 mdd:col-span-1 mdd:row-span-2 smm:col-span-3 xs:col-span-3 rounded-xl border-2 bg-gray-300 dark:bg-transparent border-slate-400/10 transition-transform duration-300 transform hover:scale-95 text-black smm:hidden mdd:order-7",
+       content: <MyStack />,
+     },
+     {
+       gridName: "Details",
+       tags: ["Home", "About"],
+       className:
+         "GridBasis pushin texture row-span-3 col-span-1 mdd:col-span-1 mdd:row-span-2 smm:col-span-3 xs:col-span-3 rounded-xl border-4 border-slate-400/10 bg-lightPeriwinkle dark:bg-transparent dark:border-lightPeriwinkle py-1 pr-2 transition-transform duration-300 transform hover:scale-95 text-black smm:order-5 sm:order-4 mdd:order-5 ",
+       content: <Details />,
+     },
+
+     {
+       gridName: "Contact",
+       tags: ["Home", "About","Media","Contact"],
+       className:
+         " GridBasis pushin texture row-span-1 col-span-2 mdd:col-span-2 mdd:row-span-2 smm:col-span-3 xs:col-span-3 rounded-xl border-4 border-slate-400/10 bg-lightNaples dark:bg-transparent dark:border-darkVanilla p-1 transition-transform duration-300 transform hover:scale-95 text-black dark:text-lightSnow text-3xl smm:order-5 mdd:order-9 xl:text-center",
+       content: <Contact />,
+     },
+     {
+       gridName: "Care Sync",
+       tags: ["Home", "Projects"],
+       className:
+         " bg-lightVertigress projector GridBasis mdd:flex mdd:justify-center text-start !block pushin texture row-span-1 col-span-1 mdd:col-span-1 smm:col-span-3 rounded-xl border-4 border-slate-400/10  p-4 transition-transform duration-300 transform hover:scale-95 text-black group smm:order-last mdd:order-last dark:bg-transparent dark:border-darkicebBlue",
+       content: (
+         <ProjectCard
+           title={"Care Sync"}
+           description={" Hospital Management"}
+           previewUrl={"https://www.youtube.com"}
+           backgroundColor1={"#489f9C"}
+         />
+       ),
+     },
+
+     {
+       gridName: "Scrabble Template",
+       tags: ["Home", "Projects"],
+       className:
+         " dark:border-darkVista GridBasis h-48 mdd:h-24 pushin texture row-span-2 col-span-2 mdd:col-span-3  rounded-xl border-4 dark:bg-transparent border-slate-400/10  p-4 transition-transform duration-300 transform hover:scale-95 text-black group smm:order-last mdd:order-last",
+       content: (
+         <ProjectCard2
+           title={"Scrabble Portfolio Template"}
+           description={"Template"}
+           previewUrl={"https://www.youtube.com"}
+           backgroundColor1="#464D77"
+         />
+       ),
+     },
+    //  {
+    //    gridName: "Contact",
+    //    tags: ["Home", "About"],
+    //    className:
+    //      " GridBasis pushin texture row-span-1 col-span-2 mdd:col-span-2 mdd:row-span-2 smm:col-span-3 xs:col-span-3 rounded-xl border-4 border-slate-400/10 bg-lightNaples dark:bg-transparent dark:border-darkVanilla p-1 transition-transform duration-300 transform hover:scale-95 text-black dark:text-lightSnow text-3xl smm:order-5 mdd:order-9 xl:text-center",
+    //    content: <Contact />,
+    //  },
+     //  {
+     //    gridName: "Projects",
+     //    tags: ["Home", "Projects"],
+     //    className: "",
+
+     //  },
+     // Add more grid entries as needed
+   ];
+
+
+    const filteredComponents = gridData.filter((component) =>
+      component.tags.includes(tag)
+    );
+
+    // Unfiltered components
+    const unfilteredComponents = gridData.filter(
+      (component) => !component.tags.includes(tag)
+    );
+
+
+
   return (
-    // <div className="max-w-screen-xl m-auto flex justify-between">
-    // <div className="max-w-screen-xl m-auto">
     <Container>
       <Suspense fallback={<p>Loading feed...</p>}>
         {/* <div className="grid auto-rows-[192px] grid-cols-1 smm:grid-cols-2 md:grid-cols-3 gap-2 transition-all duration-300 ease-in-out"> */}
-        <div className="grid smm:grid-cols-2 gap-2 mdd:grid-cols-3 grid-cols-6 ">
-          {/* <div className="grid  grid-cols-1 gap-2 mdd:grid-cols-3 "> */}
-          <div
-            className={` GridBasis pushin row-span-1 rounded-xl border-2 bg-[#c3dacb] border-slate-400/10  p-4 transition-transform duration-300 transform hover:scale-105 text-black`}
-          >
-            <div className="stack-top">Feature to come.</div>
-            {/* <Spotify /> */}
-          </div>
-          <div
-            id="myStack"
-            className={`GridBasis pushin texture row-span-1 col-span-2 mdd:col-span-1 rounded-xl border-2 bg-[#58c0e6] border-slate-400/10  p-4 transition-transform duration-300 transform hover:scale-105 text-black`}
-          >
-            {/* <Resume /> */}
-            <MyStack />
-          </div>
-          <div
-            className={` GridBasis pushin row-span-1 col-span-2 mdd:col-span-1 rounded-xl border-2 !bg-transparent transition-transform duration-300 transform hover:scale-105 text-black   `}
-          >
-            <Blog />
-          </div>
-          <div
-            className={` GridBasis pushin texture row-span-1 col-span-1 mdd:col-span-1 smm:col-span-1  rounded-xl border-2 border-slate-400/10 bg-[#37F76D] p-4 transition-transform duration-300 transform hover:scale-105 text-black   `}
-          >
-            <div className="Github_container__xhatr">
-              <GithubIcon className="w-full h-auto" />
-              <Link
-                href={"https://github.com/MichiasShiferaw/"}
-                target={"_blank"}
-              >
-                <div className="arrow">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="0.5em"
-                    height="0.5em"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#000"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M18 6L6 18"></path>
-                    <path d="M8 6h10v10"></path>
-                  </svg>
-                </div>
-              </Link>
-            </div>
-          </div>
-          <div
-            className={` groupG1 GridBasis pushin texture row-span-1 col-span-1 mdd:col-span-1 smm:col-span-1 rounded-xl border-2 border-slate-400/10 bg-gray-300 p-4 transition-transform duration-300 transform hover:scale-105 text-black `}
-          >
-            <Toggle />
-          </div>
-          <motion.div
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            style={{
-              rotateY,
-              rotateX,
-              transformStyle: "preserve-3d",
-            }}
-            className={` GridBasis pushin row-span-3 col-span-4 mdd:col-span-3 mdd:row-span-3 smm:col-span-2 rounded-xl border-2 border-slate-400/10 bg-orange-200  p-2 transition-transform duration-300 transform hover:scale-105 text-black mdd:order-first`}
-          >
-            <Hero />
-          </motion.div>
-          <div
-            className={` groupG GridBasis pushin texture row-span-3 col-span-1 mdd:row-span-1 mdd:col-span-3 smm:col-span-2 rounded-xl border-2 border-slate-400/10 bg-gray-300 p-2 transition-transform duration-300 transform hover:scale-105 text-black `}
-          >
-            <Details />
-          </div>
 
-          <motion.div
-            className={` GridBasis pushin texture row-span-1 col-span-1 mdd:col-span-1 rounded-xl border-2 border-slate-400/10 bg-[#0A66C2] p-4 transition-transform duration-300 transform hover:scale-105 text-black `}
-          >
-            <div className="Github_container__xhatr">
-              <LinkedInIcon className="w-full h-auto" />
-              <Link
-                href={"https://www.youtube.com/@kuubamusic"}
-                target={"_blank"}
-              >
-                <div className="arrow">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="0.5em"
-                    height="0.5em"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#000"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M18 6L6 18"></path>
-                    <path d="M8 6h10v10"></path>
-                  </svg>
-                </div>
-              </Link>
-            </div>
-          </motion.div>
+        {/* Display unfiltered components with gray overcast */}
 
-          <div
-            className={` GridBasis pushin texture row-span-1 col-span-1 mdd:col-span-1 rounded-xl border-2 border-slate-400/10 bg-[#e37575] p-4 transition-transform duration-300 transform hover:scale-105 text-black `}
-          >
-            <div className="Github_container__xhatr">
-              <YoutubeIcon className="w-full h-auto" />
-              <Link
-                href={"https://www.youtube.com/@kuubamusic"}
-                target={"_blank"}
-              >
-                <div className="arrow">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="0.5em"
-                    height="0.5em"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#000"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M18 6L6 18"></path>
-                    <path d="M8 6h10v10"></path>
-                  </svg>
-                </div>
-              </Link>
-            </div>
-          </div>
-          <div
-            // drag
-            // dragDirectionLock
-            // dragConstraints={{ top: 0, right: 0, bottom: 0, left: 0 }}
-            // dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
-            // dragElastic={0.5}
-            // whileTap={{ cursor: "grabbing" }}
-            className={` GridBasis pushin texture row-span-1 col-span-2 mdd:col-span-1 smm:col-span-2 rounded-xl border-2 border-slate-400/10 bg-gray-300 p-4 transition-transform duration-300 transform hover:scale-105 text-black text-3xl`}
-          >
-            <div className="contact">
-              <h1 className="text-6xl font-black">Say hi!</h1>
-              {/* <div className="text-center">Contact Me</div> */}
-              {/* <Link
-                href={"malito:michiasshif@gmail.com"}
-                target={"_blank"}
-                className="ml-4 text-lg font-medium capitalize text-dark underline dark:text-light md:text-base bg-red-300 rounded-xl"
-              >
-                Contact Me
-              </Link> */}
+        <div className="grid smm:grid-cols-2 gap-4 mdd:grid-cols-3 grid-cols-6 ">
+          {tag === "Home" ? (
+            <>
+              {filteredComponents.map((Component, index) => (
+                <motion.div
+                  // initial={{ y: -(index * 150) }}
+                  // animate={{ y: 0 }}
+                  // exit={{ y: -(index * 150) }}
+                  // transition={{ duration: 1, delay: 0 }}
+                  key={index}
+                  className={` ${Component.className} `}
+                >
+                  {Component.content}
+                </motion.div>
+              ))}
 
-              <Link
-                href={"malito:michiasshif@gmail.com"}
-                target={"_blank"}
-                className="px-1 inline-block py-1 w-50 sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-800 text-white mt-3"
-              >
-                <span className="block bg-[#7891d8] hover:bg-[#4163c2] rounded-full px-5 py-2">
-                  Contact Me
-                </span>
-              </Link>
-            </div>
-          </div>
-          <ProjectCard2
-            imgUrl={"./scrabblePort.png"}
-            title={"Scrabble Portfolio Template"}
-            description={"Template"}
-            // gitUrl={"https://www.youtube.com"}
-            previewUrl={"https://www.youtube.com"}
-          />
-
-          <ProjectCard
-            imgUrl={"./CareSync.jpg"}
-            title={"Care Sync"}
-            description={" Hospital Management"}
-            // gitUrl={"https://www.youtube.com"}
-            previewUrl={"https://www.youtube.com"}
-          />
+              {/* Display unfiltered components with gray overcast */}
+              {unfilteredComponents.map((Component, index) => (
+                <motion.div
+                  // initial={{ y: index * 150 }}
+                  // animate={{ y: 0 }}
+                  // transition={{ duration: 2, delay: 0 }}
+                  // exit={{ y: index * 150 }}
+                  key={index}
+                  className={`${Component.className} opacity-25`}
+                >
+                  {Component.content}
+                </motion.div>
+              ))}
+            </>
+          ) : (
+            <>
+              {" "}
+              {filteredComponents.map((Component, index) => (
+                <motion.div
+                  // initial={{ y: -(index * 150) }}
+                  // animate={{ y: 0 }}
+                  // exit={{ y: -(index * 150) }}
+                  // transition={{ duration: 1, delay: 0 }}
+                  key={index}
+                  className={` ${Component.className} mdd:order-first`}
+                >
+                  {Component.content}
+                </motion.div>
+              ))}
+              {/* Display unfiltered components with gray overcast */}
+              {unfilteredComponents.map((Component, index) => (
+                <motion.div
+                  // initial={{ y: index * 150 }}
+                  // animate={{ y: 0 }}
+                  // transition={{ duration: 2, delay: 0 }}
+                  // exit={{ y: index * 150 }}
+                  key={index}
+                  className={`${Component.className} opacity-25 mdd:order-last`}
+                >
+                  {Component.content}
+                </motion.div>
+              ))}
+            </>
+          )}
         </div>
-
-        {/* <MyStack/> */}
-        {/* <Project /> */}
       </Suspense>
     </Container>
     // </div>

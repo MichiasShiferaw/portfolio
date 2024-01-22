@@ -4,22 +4,20 @@ import Matter from "matter-js";
 import img from "../../../public/me.png"
 
 
+// https://codesandbox.io/p/sandbox/matterjs-xhgj4?file=%2Fsrc%2FApp.js
+
+// https://codesandbox.io/p/sandbox/matterjs-7ry1q
+
 const STATIC_DENSITY = 15;
-// const DESIGN_PERIMETER = 1920 * 2 + 1080 * 2;
-// const WIDTH = window.innerWidth;
-// const HEIGHT = window.innerHeight;
-// const WINDOW_PERIMETER = WIDTH * 2 + HEIGHT * 2;
-// const SCALE = WINDOW_PERIMETER / DESIGN_PERIMETER;
 
 const MyStack = () => {
-  // const MatterStepOne = () => {
+
   const boxRef = useRef(null);
   const canvasRef = useRef(null);
   const [width, setWidth] = useState();
   const [height, setHeight] = useState();
   const DESIGN_PERIMETER = 1920 * 2 + 1080 * 2;
-  //   const WIDTH = window.innerWidth;
-  //   const HEIGHT = window.innerHeight;
+
   const WINDOW_PERIMETER = width * 2 + width * 2;
   const SCALE = WINDOW_PERIMETER / DESIGN_PERIMETER;
 
@@ -80,7 +78,7 @@ const MyStack = () => {
         // width: 800,
         // height: 600,
         width: width,
-        height: height,
+        height: height+150,
         background: "transparent",
         wireframes: false,
       },
@@ -154,56 +152,31 @@ const MyStack = () => {
 
     Composite.add(engine.world, [
       // walls
-      // Bodies.rectangle(-50, 0, 50, height * 2, {
-      //   isStatic: true,
-      //   label: "leftWall",
-      // }),
-      // Bodies.rectangle(width + 50, 0, 50, height * 2, {
-      //   isStatic: true,
-      //   label: "rightWall",
-      // }),
-      Bodies.rectangle(width, height, width + 50, 1, {
+      Bodies.rectangle(0,height+150, 10, height * 3, {
+        isStatic: true,
+        label: "leftWall",
+      }),
+      Bodies.rectangle(width + 1,height+150, 10, height * 3, {
+        isStatic: true,
+        label: "rightWall",
+      }),
+      Bodies.rectangle(width,height+150, width + 50, 1, {
         isStatic: true,
         label: "floor",
       }),
-      // Bodies.circle(100, 0, 10, {
-      //   restitution: 0.9,
-      //   render: {
-      //     fillStyle: "yellow",
-      //   },
-      // }),
-
-      // for (let i = 0; i < 10; i++) {
-      //   let stack = Bodies.circle(i, 10, 30, {
-      //     friction: 0.3,
-      //     frictionAir: 0.00001,
-      //     restitution: 0.8,
-      //   });
-      //   Composite.add(engine.world, stack);
-      // }
-
-      // Bodies.circle(100, 0, 10, {
-      //   density: 0.005,
-      //   frictionAir: 0.06,
-      //   restitution: 0.3,
-      //   friction: 0.01,
-      //   render: {
-      //     sprite: {
-      //       texture: img,
-      //     },
-      //   },
-      // }),
 
       // stack,
     ]);
 
-    for (let i = 0; i < 20; i++) {
-      let stack = Bodies.circle(i, 10, 25, {
+
+    for (let i = 0; i < 6; i++) {
+      let stack = Bodies.circle(width/2, 10, 12, {
+        id:i,
         friction: 0.3,
         frictionAir: 0.00001,
         restitution: 0.8,
       });
-      Composite.add(engine.world, stack);
+    Composite.add(engine.world, stack);
     }
     // add mouse control
     var mouse = Mouse.create(render.canvas),
@@ -271,16 +244,21 @@ const MyStack = () => {
 
   return (
     <>
-      {/* <span>Redo</span> */}
-      <div
+      <div className="flex flex-col">
+        {/* <span>Redo</span> */}
+        {/* <div
         ref={boxRef}
         style={{
           width: "100%",
-          height: "100%",
-          maxHeight: "165px",
+          height: "120%",
+          // maxHeight: "165px",
         }}
       >
         <canvas ref={canvasRef} />
+      </div> */}
+        <div className="text-center">
+          <span className="text-sm text-gray-500">Stack Section</span>
+        </div>
       </div>
     </>
   );

@@ -16,7 +16,6 @@ const Hand = () => {
         <Spline
           // style={{ maxHeight: "300px" }}
           scene="https://prod.spline.design/OEek7DHBEkSnQmH0/scene.splinecode"
-          
         />
         {/* https://prod.spline.design/nvg0vCC6XeDMH2PZ/scene.splinecode */}
       </Suspense>

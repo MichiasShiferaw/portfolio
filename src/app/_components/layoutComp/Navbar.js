@@ -74,20 +74,17 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className="NavItemsContainer text-[19px] text-lightyinBlue gap-16 mdd:gap-4 smm:gap-3 px-16 mdd:px-4 smm:px-3 py-[6px]  border-2 border-lightFrenchGrey">
+      <div className="NavItemsContainer text-[19px] text-lightyinBlue gap-16 lg:gap-4 smm:gap-3 px-16 lg:px-4 smm:px-3 py-[6px]  border-2 border-lightFrenchGrey">
         {tabs.map((tab) => (
           <NavLink
-          
             text={tab}
             selected={selected === tab}
             setSelected={setSelected}
             key={tab}
             tag={tab}
             handleTagChange={handleTagChange}
-            
           />
         ))}
-
       </div>
 
       <Hand />

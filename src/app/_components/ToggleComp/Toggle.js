@@ -1,5 +1,5 @@
 import React from 'react'
-import { MoonIcon, SunIcon } from '../Icons1'
+import { MoonIcon, SunIcon } from '../Icons'
 import useThemeSwitcher from '../hooks/useThemeSwitcher';
 
 const Toggle = () => {

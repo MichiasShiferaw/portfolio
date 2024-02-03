@@ -1,5 +1,5 @@
 import React from 'react';
-import { GithubIcon } from './Icons1';
+import { GithubIcon } from './Icons';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
@@ -19,13 +19,13 @@ const GithubSection = () => {
               className="!w-24 !h-24 mdd:hidden dark:block hidden"
               color={"#9FF5F2"}
             />
+            <div className="pot absolute -z-30 top-0; opacity-15">🐛</div>{" "}
           </div>
         </div>
-        <div className="mt-4 text-black dark:text-darkicebBlue px-1">
-          {" "}
+        <div className="mt-4 text-black dark:text-darkicebBlue px-0.5">
           <Link href="#" className="flex justify-center font-medium">
             <h5 className=" text-sm flex items-center gap-2 break-normal  ">
-              I code in dark-mode because light attracts bugs.🐛🐛
+              I code in dark-mode because light attracts bugs.
             </h5>
           </Link>
           {/* <p className="text-xs">Worm Here</p> */}

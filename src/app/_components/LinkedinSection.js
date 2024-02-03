@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link';
-import { LinkedInIcon } from './Icons1';
+import { LinkedInIcon } from './Icons';
 import { motion } from 'framer-motion';
 
 const LinkedinSection = () => {
@@ -22,7 +22,11 @@ const LinkedinSection = () => {
         </div>
         <div className="mt-4 mb-4 text-white ">
           {" "}
-          <Link href="#" className="flex justify-center font-bold">
+          <Link
+            href={"https://www.linkedin.com/in/michiasshiferaw/"}
+            target={"_blank"}
+            className="flex justify-center font-bold"
+          >
             <h5 className="underline  xl:text-sm text-lg  flex items-center gap-2 ">
               MichiasShiferaw
             </h5>

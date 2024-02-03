@@ -87,86 +87,22 @@ const MyStack = () => {
     Render.run(render);
 
     // Engine.run(engine);
+
+
+    const rightWall = Bodies.rectangle(width + 1, height, 8, 1, {
+      isStatic: true,
+      label: "rightWall",
+    });
+    
+    const leftWall = Bodies.rectangle(20, height , 8, height * 3, {
+      isStatic: true,
+      label: "leftWall",
+    });
     let runner = Runner.create();
     Runner.run(runner, engine);
 
-    // Composite.
+World.add(engine.world, [leftWall,rightWall]);
 
-    // let stack = Composites.stack(width / 2, 0, 1, 10, 0, 0, function (x, y) {
-    //   return Bodies.circle(x, y, 20);
-    // });
-
-    // const shapes = [
-    //   {
-    //     paths: ["M10 10 L50 10 L30 50 Z"], // Example path (triangle)
-    //   },
-    //   {
-    //     paths: ["M20 20 L60 20 L40 60 Z"], // Example path (another triangle)
-    //   },
-    //   // Add more shapes as needed
-    // ];
-
-    // let wordsToDisplay=[
-    //     "FaceBook",
-    //     "Instagram"
-    // ]
-
-    // shapes.forEach((shape) => {
-    //   // Convert paths to vertices
-    //   const vertexSets = shape.paths.map((path) =>
-    //     Vertices.scale(Svg.pathToVertices(path, 30), SCALE, SCALE)
-    //   );
-
-    //   const getRandomBetween = (min, max) => Math.random() * (max - min) + min;
-
-    //   // Create the physics body
-    //   const body = Bodies.fromVertices(
-    //     getRandomBetween(width * 0.3, width * 0.7),
-    //     getRandomBetween(height * -0.5, height * -5),
-    //     // getRandomBetween(-100 + HEIGHT * -1, -100 + HEIGHT * -2),
-    //     vertexSets,
-    //     {
-    //       label: shape.name,
-    //       render: {
-    //         sprite: {
-    //           texture: shape.texture,
-    //           xScale: 0.5 * SCALE,
-    //           yScale: 0.5 * SCALE,
-    //         },
-    //       },
-    //     }
-    //   );
-
-    //   // Add the body to the world
-    //   Composite.add(engine.world, body);
-    // });
-
-    // for (let i = 0; i < 10; i++) {
-    //   let stack = Bodies.circle(i, 10, 30, {
-    //     friction: 0.3,
-    //     frictionAir: 0.00001,
-    //     restitution: 0.8,
-    //   });
-    //   Composite.add(engine.world, stack);
-    // }
-
-    Composite.add(engine.world, [
-      // walls
-      Bodies.rectangle(0,height+150, 10, height * 3, {
-        isStatic: true,
-        label: "leftWall",
-      }),
-      Bodies.rectangle(width + 1,height+150, 10, height * 3, {
-        isStatic: true,
-        label: "rightWall",
-      }),
-      Bodies.rectangle(width,height+150, width + 50, 1, {
-        isStatic: true,
-        label: "floor",
-      }),
-
-      // stack,
-    ]);
 
 
     for (let i = 0; i < 6; i++) {
@@ -176,7 +112,7 @@ const MyStack = () => {
         frictionAir: 0.00001,
         restitution: 0.8,
       });
-    Composite.add(engine.world, stack);
+    Composite.add(engine.world, [stack]);
     }
     // add mouse control
     var mouse = Mouse.create(render.canvas),
@@ -246,7 +182,7 @@ const MyStack = () => {
     <>
       <div className="flex flex-col">
         {/* <span>Redo</span> */}
-        {/* <div
+        <div
         ref={boxRef}
         style={{
           width: "100%",
@@ -255,7 +191,7 @@ const MyStack = () => {
         }}
       >
         <canvas ref={canvasRef} />
-      </div> */}
+      </div>
         <div className="text-center">
           <span className="text-sm text-gray-500">Stack Section</span>
         </div>

@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import React from 'react';
-import { YoutubeIcon } from './Icons1';
+import { YoutubeIcon } from './Icons';
 import { motion } from 'framer-motion';
 
 
 const YoutubeSection = () => {
   return (
-<>
+    <>
       <div className="mdd:hidden block">
         <div className="flex items-center justify-start">
           <div className="flex items-end">
@@ -15,7 +15,11 @@ const YoutubeSection = () => {
         </div>
         <div className="mt-4 mb-4 text-white">
           {" "}
-          <Link href="#" className="flex justify-center font-bold">
+          <Link
+            href={"https://www.youtube.com/@kuubamusic"}
+            target={"_blank"}
+            className="flex justify-center font-bold"
+          >
             <h5 className="underline text-2xl 2xl:text-lg xl:text-md  flex items-center gap-2 ">
               Kuuba
               <svg
@@ -62,7 +66,6 @@ const YoutubeSection = () => {
           </motion.div>
         </Link>
       </div>
-
     </>
   );
 }

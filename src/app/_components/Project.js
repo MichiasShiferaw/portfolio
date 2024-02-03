@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
 import Link from "next/link";
-import { LinkedInIcon } from "./Icons1";
+import { LinkedInIcon } from "./Icons";
 import Image from "next/image";
 
 
@@ -28,7 +28,7 @@ export const ProjectCard = ({ title, description, gitUrl, previewUrl,backgroundC
         </div>
         <p className="text-sm font-medium">P</p>
       </div>
-      <div className="mt-6 xl:mt-0 text-center xl:text-xl dark:text-lightSnow">{title}</div>
+      <div className="mt-6 xl:mt-0 text-center xl:text-lg 2xl:text-2xl dark:text-lightSnow">{title}</div>
     
     </>
   );
@@ -38,7 +38,7 @@ export const ProjectCard2 = ({ title,description, previewUrl,backgroundColor1 })
   return (
 <>
       <button
-        className="!absolute top-4 right-4 h-8 max-h-[32px] w-8 max-w-[32px] select-none rounded-full text-center align-middle font-sans text-sm font-medium uppercase text-blue-500 transition-all hover:bg-blue-500/10 active:bg-blue-500/30"
+        className="!absolute top-4 right-4 max-h-[32px] w-8 max-w-[32px] select-none rounded-full text-center align-middle font-sans text-sm font-medium uppercase text-blue-500 transition-all hover:bg-blue-500/10 active:bg-blue-500/30"
         type="button"
         data-ripple-dark="true"
       >

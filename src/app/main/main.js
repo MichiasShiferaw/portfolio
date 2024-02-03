@@ -1,24 +1,17 @@
 "use client";
-import React, {Suspense, useRef, useState} from "react";
+import React, {Suspense, useRef} from "react";
 import Container from "../_components/Container";
-import { GithubIcon, LinkedInIcon, SpotifyIcon, YoutubeIcon } from "../_components/Icons1";
 import { motion, useInView, useMotionValue, useSpring, useTransform } from "framer-motion";
-import Hand from "../_components/mainPage/Hand";
-import AnimatedText from "../_components/AnimatedNumber";
-import AnimatedNumber from "../_components/AnimatedNumber";
+
 import Blog from "../_components/mainPage/blog";
 
-import Link from "next/link";
 import Toggle from "../_components/ToggleComp/Toggle";
 import Hero from "../_components/Hero";
-import Spotify from "../_components/Miscell/Spotify";
 import MyStack from "../_components/MyStack";
 import Details from "../_components/Details";
-import Project from "../_components/Project";
-import imgUrl from "../../../public/CareSync.jpg"
+
 import {ProjectCard,ProjectCard2} from "../_components/Project";
-import { LinkArrow } from "../_components/Miscell/LinkArrow";
-import Marquee from "react-fast-marquee";
+
 import { useFilter } from "../_components/FilterContext";
 import Contact from "../_components/Contact";
 import GithubSection from "../_components/GithubSection";
@@ -26,30 +19,6 @@ import LinkedinSection from "../_components/LinkedinSection";
 import YoutubeSection from "../_components/YoutubeSection";
 import SpotifySection from "../_components/SpotifySection";
 
-
-
-
-const Typing=({ word })=>{
-    word = word.split(" ")
-    return (
-      <>
-        {word.map((el, i) => (
-          <motion.span
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{
-              duration: 0.25,
-              delay: i / 10,
-            }}
-            key={i}
-          >
-            {el}
-            <span> </span>
-          </motion.span>
-        ))}
-      </>
-    );
-}
 
 const Main = () => {
 
@@ -92,27 +61,13 @@ const Main = () => {
     };
 
 
-    // filter
-    // const [tag,setTag] = useState("All");
     const ref = useRef(null);
     
     const isInView = useInView(ref, { once: true });
 
-    // const handleTagChange = (newTag) => {
-    //   setTag(newTag);
-    // };
-
-
-
-    //  const cardVariants = {
-    //    initial: { y: 50, opacity: 0 },
-    //    animate: { y: 0, opacity: 1 },
-    //  };
 
     const { tag, handleTagChange } = useFilter();
 
-
-    console.log("Hi"+tag)
    const gridData = [
      {
        gridName: "Spotify",
@@ -217,8 +172,7 @@ const Main = () => {
     //      />
     //    ),
     //  },
-   
-     // Add more grid entries as needed
+
    ];
 
 
@@ -238,7 +192,6 @@ const Main = () => {
       <Suspense fallback={<p>Loading feed...</p>}>
         {/* <div className="grid auto-rows-[192px] grid-cols-1 smm:grid-cols-2 md:grid-cols-3 gap-2 transition-all duration-300 ease-in-out"> */}
 
-        {/* Display unfiltered components with gray overcast */}
 
         <div className="grid smm:grid-cols-2 gap-4 mdd:grid-cols-3 grid-cols-6 ">
           {tag === "Home" ? (

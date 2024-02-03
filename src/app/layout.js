@@ -1,7 +1,6 @@
 "use client"
 import './globals.css'
 import Navbar from './_components/layoutComp/Navbar';
-import Footer from './_components/layoutComp/Footer';
 import { AnimatePresence } from 'framer-motion';
 
 import Head from "next/head";

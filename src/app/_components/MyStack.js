@@ -182,7 +182,7 @@ World.add(engine.world, [leftWall,rightWall]);
     <>
       <div className="flex flex-col">
         {/* <span>Redo</span> */}
-        <div
+        {/* <div
         ref={boxRef}
         style={{
           width: "100%",
@@ -191,7 +191,7 @@ World.add(engine.world, [leftWall,rightWall]);
         }}
       >
         <canvas ref={canvasRef} />
-      </div>
+      </div> */}
         <div className="text-center">
           <span className="text-sm text-gray-500">Stack Section</span>
         </div>

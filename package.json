@@ -13,13 +13,15 @@
     "@splinetool/runtime": "^1.0.21",
     "axios": "^1.6.5",
     "framer-motion": "^10.17.9",
+    "lodash": "^4.17.21",
     "matter-js": "^0.19.0",
     "next": "14.0.4",
     "poly-decomp": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
     "react-fast-marquee": "^1.6.3",
-    "react-type-animation": "^3.2.0"
+    "react-type-animation": "^3.2.0",
+    "react-use-measure": "^2.1.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",

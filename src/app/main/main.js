@@ -136,7 +136,7 @@ const Main = () => {
                 <span className="text-black dark:text-darkVanilla">
                   The Latest.
                 </span>{" "}
-                Take a look at what's new right now
+                Take a look at what is new right now
               </h1>
             }
             size={"h-[40vh]"}

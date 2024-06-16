@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import Matter, { Runner } from "matter-js";
 import { sample } from "lodash";
-import ES from "../ES.png"
+// import ES from "../ES.png"
 
 const Scene = () => {
   const sceneRef = useRef(null);
@@ -34,7 +34,7 @@ const Scene = () => {
       },
     });
 
-    const images = [ES, ES, ES, ES];
+    // const images = [ES, ES, ES, ES];
     let ind=0;
     const stack = Composites.stack(20, 14, 14, 5, 22, 7, (x, y) => {
         ind++;
@@ -43,7 +43,7 @@ const Scene = () => {
               id:`body-${ind}`,
               render: {
                 sprite: {
-                    template:ES,
+                    // template:ES,
                   xScale: 0.1,
                   yScale: 0.1,
                 },

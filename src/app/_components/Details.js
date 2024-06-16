@@ -1,5 +1,5 @@
 import React from 'react'
-import AnimatedNumber from './AnimatedNumber';
+import AnimatedNumber from './styling/AnimatedNumber';
 
 
 const Details = () => {

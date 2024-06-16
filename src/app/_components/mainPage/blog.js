@@ -10,8 +10,8 @@ const Blog = () => {
     // <div ref={splineContainerRef} style={{ width: "100%", height: "auto" }}>
     // <div className="text-9xl mdd:text-6xl text-lightPeriwinkle">
 
-    <div className=" text-lightPeriwinkle dark:text-darkRaisin">
-      <div className="flex items-center justify-start px-4 text-8xl mdd:text-4xl">
+    <div className=" text-lightPeriwinkle dark:text-darkRaisin my-auto w-full text-center">
+      <div className="flex items-center justify-end px-4 text-8xl mdd:text-4xl font-semibold">
         <div className="flex items-end">
           <span>Blog</span>
           <motion.div whileHover={{ rotate: 45, scale: 1.4 }}>
@@ -39,31 +39,25 @@ const Blog = () => {
             </Link>
           </motion.div>
         </div>
-        {/* <p className="text-sm font-medium">M</p> */}
       </div>
-      <div className="mt-6 text-black px-1">
-        {" "}
-        <Link
-          href="#"
-          target="_blank"
-          className="flex justify-start ml-8 font-medium "
-        >
-          {/* <a
-            target="_blank"
-            className="relative"
-            href="https://devdreaming.com/blogs/react-form-validation-custom-hook"
-          > */}
-          <h2 className="capitalize text-xl font-semibold hover:underline  mdd:text-lg xs:text-base">
-            Latest: Ken Kutaragi &ndash; Sony&apos;s Disruptive Leader
-          </h2>
-          {/* </a> */}
-          {/* <h5 className="underline text-xl flex items-center gap-2 break-normal  ">
-            Latest: Ken Kutaragi
-          </h5> */}
-        </Link>
+      <div className="mt-2 text-black px-1 mx-4">
+        <div className="flex justify-between gap-x-6 py-2">
+          <div className="flex min-w-0 gap-x-4">
+            <img
+              className="h-24 w-24 flex-none rounded-lg bg-gray-500"
+              src="/alarm_blog.jpg"
+              alt=""
+            />
+            <div className="min-w-0 flex-auto text-start font-semibold">
+              <h2 className="text-purple-600 text-3xl">Latest:</h2>
+              <h2 className="capitalize font-semibold hover:underline text-xl text-start">
+                STM32CubeIDE &ndash; Alarm System
+              </h2>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
   );
 };
 

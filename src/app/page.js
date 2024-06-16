@@ -1,11 +1,12 @@
-
+// "use client"
 
 import React from "react";
 import Image from 'next/image'
 import Main from './main/main';
-import TransitionEffect from './_components/TransitionEffect';
+import TransitionEffect from './_components/styling/TransitionEffect';
 import Head from "next/head";
 import { Metadata } from "next";
+
 
 
 export const metadata = {
@@ -26,9 +27,9 @@ export default function Home() {
           content="A brief description of the page content."
         />
       </Head>
-      
-      {/* <TransitionEffect /> */}
-      <Main />
+
+        <TransitionEffect />
+        <Main />
     </>
   );
 }

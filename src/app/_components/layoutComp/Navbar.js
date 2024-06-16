@@ -5,18 +5,26 @@ import React from 'react'
 import Hand from '../mainPage/Hand';
 import Link from 'next/link';
 import { motion } from "framer-motion";
-import { useFilter } from '../FilterContext';
+import { useFilter } from '../function/FilterContext';
 
 
 
-const NavLink = ({ text, selected, setSelected, tag, handleTagChange }) => {
+const NavLink = ({
+  text,
+  selected,
+  setSelected,
+  tag,
+  handleTagChange,
+  link,
+}) => {
   const handleFilterChange = (newFilter) => {
     // console.log(newFilter);
     setSelected(newFilter);
     handleTagChange(tag);
   };
   return (
-    <button
+    <a
+      href={link}
       onClick={() => handleFilterChange(text)}
       className={`group relative scale-100 overflow-hidden rounded-lg px-4 py-2 transition-transform hover:scale-105 active:scale-95 ${
         selected
@@ -35,11 +43,10 @@ const NavLink = ({ text, selected, setSelected, tag, handleTagChange }) => {
           className="absolute inset-0 z-0 bg-gray-300 rounded-md"
         ></motion.span>
       )}
-    </button>
+    </a>
   );
 };
 
-// const tabs = ["Home", "About", "Projects", "Media", "Contact"];
 const tabs = ["Home", "About", "Media", "Contact"];
 const Navbar = () => {
   const [selected, setSelected] = useState(tabs[0]);
@@ -74,9 +81,10 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className="NavItemsContainer text-[19px] text-lightyinBlue gap-16 lg:gap-4 smm:gap-3 px-16 lg:px-4 smm:px-3 py-[6px]  border-2 border-lightFrenchGrey">
+      <div className="group relative NavItemsContainer text-[19px] text-lightyinBlue gap-16 lg:gap-4 smm:gap-3 px-16 lg:px-4 smm:px-3 py-[6px]  border-2 hover:border-0 border-lightFrenchGrey">
         {tabs.map((tab) => (
           <NavLink
+            link="#about"
             text={tab}
             selected={selected === tab}
             setSelected={setSelected}
@@ -85,6 +93,16 @@ const Navbar = () => {
             handleTagChange={handleTagChange}
           />
         ))}
+        <span className="absolute left-0 top-0 h-[2px] w-0 bg-lightFrenchGrey transition-all duration-100 group-hover:w-full" />
+
+        {/* RIGHT */}
+        <span className="absolute right-0 top-0 h-0 w-[2px] bg-lightFrenchGrey transition-all delay-100 duration-100 group-hover:h-full" />
+
+        {/* BOTTOM */}
+        <span className="absolute bottom-0 right-0 h-[2px] w-0 bg-lightFrenchGrey transition-all delay-200 duration-100 group-hover:w-full" />
+
+        {/* LEFT */}
+        <span className="absolute bottom-0 left-0 h-0 w-[2px] bg-lightFrenchGrey transition-all delay-300 duration-100 group-hover:h-full" />
       </div>
 
       <Hand />

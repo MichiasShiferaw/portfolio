@@ -5,7 +5,8 @@ import { AnimatePresence } from 'framer-motion';
 
 import Head from "next/head";
 import { Poppins } from 'next/font/google';
-import { FilterProvider } from './_components/FilterContext';
+import { FilterProvider } from './_components/function/FilterContext';
+import Footer from './_components/layoutComp/Footer';
 
 const poppins = Poppins({ subsets: ['latin'],display: 'swap',
   variable: '--font-poppins',
@@ -23,19 +24,17 @@ export default function RootLayout({ children }) {
       </Head>
       <html lang="en">
         <body
-
           className={`${poppins.className}  bg-lightSnow dark:bg-darkRaisin  w-full min-h-screen h-full `}
         >
           <FilterProvider>
-
             <AnimatePresence mode="wait">
               <Navbar />
-              <div className=" p-24 lg:p-16 mdd:p-12 mdd:mt-24 ">
+              <div className=" p-24 pt-2 lg:p-16 mdd:p-12 mdd:mt-24 ">
                 {children}
+                <Footer />
               </div>
             </AnimatePresence>
           </FilterProvider>
-
         </body>
       </html>
     </>

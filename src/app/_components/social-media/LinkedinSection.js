@@ -1,48 +1,51 @@
+import React from 'react'
 import Link from 'next/link';
-import React from 'react';
-import { YoutubeIcon } from './Icons';
+// import { LinkedInIcon } from './Icons';
+import { LinkedInIcon } from '../Icons';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
-
-const YoutubeSection = () => {
+const LinkedinSection = () => {
   return (
     <>
       <div className="mdd:hidden block">
         <div className="flex items-center justify-start">
           <div className="flex items-end">
-            <YoutubeIcon className="!w-32 !h-32 mdd:hidden block" />
+            {/* <LinkedInIcon className="!w-36 !h-36 mdd:hidden block  " /> */}
+
+            <LinkedInIcon
+              className="hover:motion-safe:animate-ping !w-36 !h-36 xl:!w-28 xl:!h-28 mdd:hidden block dark:hidden"
+              color={"#fff"}
+            />
+            <LinkedInIcon
+              className="hover:motion-safe:animate-ping !w-36 !h-36 xl:!w-28 xl:!h-28 mdd:hidden dark:block hidden"
+              color={"#8F9EF5"}
+            />
           </div>
         </div>
-        <div className="mt-4 mb-4 text-white">
+        <div className="mt-4 mb-4 text-white ">
           {" "}
           <Link
-            href={"https://www.youtube.com/@kuubamusic"}
+            href={"https://www.linkedin.com/in/michiasshiferaw/"}
             target={"_blank"}
             className="flex justify-center font-bold"
           >
-            <h5 className="underline text-2xl 2xl:text-lg xl:text-md  flex items-center gap-2 ">
-              Kuuba
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="h-4 w-4"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                />
-              </svg>
+            <h5 className="underline  xl:text-sm text-lg  flex items-center gap-2 ">
+              MichiasShiferaw
             </h5>
           </Link>
         </div>
       </div>
       <div className="mdd:flex hidden Github_container__xhatr">
-        <YoutubeIcon className="w-full h-auto mdd:flex hidden" />
-
+        {/* <LinkedInIcon className="w-full h-auto mdd:block hidden" /> */}
+        <LinkedInIcon
+          className="w-full h-auto block dark:hidden"
+          color={"#fff"}
+        />
+        <LinkedInIcon
+          className="w-full h-auto dark:block hidden"
+          color={"#8F9EF5"}
+        />
         <Link
           href={"https://www.youtube.com/@kuubamusic"}
           target={"_blank"}
@@ -70,4 +73,4 @@ const YoutubeSection = () => {
   );
 }
 
-export default YoutubeSection
+export default LinkedinSection

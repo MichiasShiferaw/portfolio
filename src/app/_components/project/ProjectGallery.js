@@ -1,4 +1,4 @@
-import { motion, useTransform, useScroll } from "framer-motion";
+import { motion, useTransform, useScroll, color } from "framer-motion";
 import React, { useState, useRef } from "react";
 import ProjectModals from "./ProjectModals";
 
@@ -53,7 +53,8 @@ const ProjectGallery = ({projects}) => {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className={`group relative overflow-hidden swiper-slide-custom ${project.className} hover:brightness-50`}
+                //  hover:brightness-50
+                className={`group relative overflow-hidden swiper-slide-custom ${project.className}`}
                 onClick={() => handleOpen(project)}
               >
                 <div className="flex flex-col justify-start">
@@ -68,7 +69,7 @@ const ProjectGallery = ({projects}) => {
                       initial="hidden"
                       animate="visible"
                     >
-                      {project.technologies.map((tech, techIndex) => (
+                      {project.technologies?.map((tech, techIndex) => (
                         <motion.li
                           key={techIndex}
                           className={` inline-block py-1 px-3 w-auto h-auto justify-center items-center ${project.techClassName} rounded-xl px-4`}
@@ -78,9 +79,37 @@ const ProjectGallery = ({projects}) => {
                         </motion.li>
                       ))}
                     </motion.ul>
+                    {/* <div>{color}</div> */}
+                    <div className="flex justify-start mb-4 ml-6 fixed bottom-1">
+                      {project.color ? (
+                        <button
+                          className={`flex text-gray-100 justify-center h-60 w-80 transition duration-200 ease-in-out transform px-4 py-2 border-b-4 border-${project.color}-500 hover:border-b-2 bg-gradient-to-t from-${project.color}-400 via-${project.color}-600 to-${project.color}-200 rounded-2xl hover:translate-y-px`}
+                          style={{
+                            WebkitBoxShadow:
+                              "0px 10px 13px -7px #000000, 5px 5px 15px 8px rgba(0,0,0,0)",
+                            boxShadow:
+                              "0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0)",
+                          }}
+                        >
+                          <span className="font-bold text-2xl">{project.description}</span>
+                        </button>
+                      ) : (
+                        <button
+                          className={`flex text-gray-100 justify-center h-60 w-80 transition duration-200 ease-in-out transform px-4 py-2 border-b-4 border-slate-500 hover:border-b-2 bg-gradient-to-t from-slate-400 via-slate-600 to-slate-200 rounded-2xl hover:translate-y-px`}
+                          style={{
+                            WebkitBoxShadow:
+                              "0px 10px 13px -7px #000000, 5px 5px 15px 8px rgba(0,0,0,0)",
+                            boxShadow:
+                              "0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0)",
+                          }}
+                        >
+                          <span className="font-bold">Title</span>
+                        </button>
+                      )}
+                    </div>
                   </div>
                 </div>
-                <img src={project.image} className="mt-20" alt="Slide 2" />
+                {/* <img src={project.image} className="mt-20" alt="Slide 2" /> */}
               </div>
             ))}
           </motion.div>

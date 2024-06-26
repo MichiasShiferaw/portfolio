@@ -32,7 +32,7 @@ export const projectsData = [
   {
     name: "STM32 Alarm System",
     technologies: ["C++", "STM32"],
-    image: "/spotify.png",
+    image: "/projects/alarm_blog.jpg",
     className:
       "bg-gradient-to-r from-green-500 to-green-300 dark:from-green-900 dark:to-green-600",
     techClassName: "bg-green-600 text-white dark:bg-green-800",
@@ -42,7 +42,7 @@ export const projectsData = [
   {
     name: "My Blog",
     technologies: ["NextJS", "GraphQL", "HTML5", "SEO"],
-    image: "/github.png",
+    image: "/projects/blog.png",
     className:
       "bg-gradient-to-r from-orange-500 to-orange-300 dark:from-orange-900 dark:to-orange-600",
     techClassName: "bg-orange-600 text-white dark:bg-orange-800",
@@ -153,5 +153,4 @@ export const projectsData = [
   // Extensions
   // Care Sync
   // Scrabble Draft
-  
 ];

@@ -86,7 +86,7 @@ const Loading = () => {
           123
         </motion.div>
       </motion.div> */}
-      LOading
+      Loading
     </>
   );
 };

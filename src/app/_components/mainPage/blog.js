@@ -45,7 +45,7 @@ const Blog = () => {
           <div className="flex min-w-0 gap-x-4">
             <img
               className="h-24 w-24 flex-none rounded-lg bg-gray-500"
-              src="/alarm_blog.jpg"
+              src="/projects/alarm_blog.jpg"
               alt=""
             />
             <div className="min-w-0 flex-auto text-start font-semibold">

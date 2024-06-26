@@ -19,7 +19,7 @@ const Avatar = () => {
         height={"550"}
       />
       <Image
-        src={"/HeroDark.png"}
+        src={"/memoji/HeroDark.png"}
         className="hidden dark:block"
         // layout="responsive"
         alt="Hero"
